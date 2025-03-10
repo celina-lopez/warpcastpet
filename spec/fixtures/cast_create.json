@@ -1,0 +1,85 @@
+{
+  "created_at": 1737841553,
+  "type": "cast.created",
+  "data": {
+    "object": "cast",
+    "hash": "0x0b3566c2a0ec1d18569c1ecd8adfd2d45826b7a0",
+    "author": {
+      "object": "user",
+      "fid": 970247,
+      "username": "boardgames",
+      "display_name": "Boardgames",
+      "pfp_url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/e3159cfd-a167-42a9-5861-e8ae87602c00/rectcrop3",
+      "custody_address": "0x59e6a1dc95db3d03bba35c0a4aca2ad598c56ae1",
+      "profile": { "bio": { "text": "" } },
+      "follower_count": 1,
+      "following_count": 2,
+      "verifications": [],
+      "verified_addresses": { "eth_addresses": [], "sol_addresses": [] },
+      "verified_accounts": [],
+      "power_badge": false,
+      "experimental": { "neynar_user_score": 0.5 }
+    },
+    "thread_hash": "0x0b3566c2a0ec1d18569c1ecd8adfd2d45826b7a0",
+    "parent_hash": null,
+    "parent_url": null,
+    "root_parent_url": null,
+    "parent_author": { "fid": null },
+    "text": "playboardgamestesting",
+    "timestamp": "2025-01-25T21:45:51.000Z",
+    "embeds": [],
+    "channel": null,
+    "reactions": {
+      "likes_count": 0,
+      "recasts_count": 0,
+      "likes": [],
+      "recasts": []
+    },
+    "replies": { "count": 0 },
+    "mentioned_profiles": [],
+    "event_timestamp": "2025-01-25T21:45:51.996Z"
+  },
+  "webhook_type": "warpcast",
+  "webhook": {
+    "created_at": 1737841553,
+    "type": "cast.created",
+    "data": {
+      "object": "cast",
+      "hash": "0x0b3566c2a0ec1d18569c1ecd8adfd2d45826b7a0",
+      "author": {
+        "object": "user",
+        "fid": 970247,
+        "username": "boardgames",
+        "display_name": "Boardgames",
+        "pfp_url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/e3159cfd-a167-42a9-5861-e8ae87602c00/rectcrop3",
+        "custody_address": "0x59e6a1dc95db3d03bba35c0a4aca2ad598c56ae1",
+        "profile": { "bio": { "text": "" } },
+        "follower_count": 1,
+        "following_count": 2,
+        "verifications": [],
+        "verified_addresses": { "eth_addresses": [], "sol_addresses": [] },
+        "verified_accounts": [],
+        "power_badge": false,
+        "experimental": { "neynar_user_score": 0.5 }
+      },
+      "thread_hash": "0x0b3566c2a0ec1d18569c1ecd8adfd2d45826b7a0",
+      "parent_hash": null,
+      "parent_url": null,
+      "root_parent_url": null,
+      "parent_author": { "fid": null },
+      "text": "playboardgamestesting",
+      "timestamp": "2025-01-25T21:45:51.000Z",
+      "embeds": [],
+      "channel": null,
+      "reactions": {
+        "likes_count": 0,
+        "recasts_count": 0,
+        "likes": [],
+        "recasts": []
+      },
+      "replies": { "count": 0 },
+      "mentioned_profiles": [],
+      "event_timestamp": "2025-01-25T21:45:51.996Z"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "cast": {
+    "object": "cast",
+    "hash": "0x1596a2888227cb08319042d3824cd6af8274cda5",
+    "author": {
+      "object": "user",
+      "fid": 961123,
+      "username": "marisalopez",
+      "display_name": "Marisa Lopez",
+      "pfp_url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/f3927ff4-5283-468a-3ca7-1b98def9bd00/rectcrop3",
+      "custody_address": "0xa4f053f832df64e7c0faf6c0f9409dea5f383dcf",
+      "profile": {
+        "bio": {
+          "text": "Building: playboard.games Developed: Mintables.club Drew: Dino Bros NFTs"
+        }
+      },
+      "follower_count": 19,
+      "following_count": 6,
+      "verifications": [],
+      "verified_addresses": {
+        "eth_addresses": [],
+        "sol_addresses": []
+      },
+      "verified_accounts": [],
+      "power_badge": false
+    },
+    "thread_hash": "0x6e724ba3d77ce3617ca97aecce5dffdf189706c2",
+    "parent_hash": "0x6e724ba3d77ce3617ca97aecce5dffdf189706c2",
+    "parent_url": null,
+    "root_parent_url": null,
+    "parent_author": {
+      "fid": 961123
+    },
+    "text": "@boardgames play the spy",
+    "timestamp": "2025-01-28T23:11:38.000Z",
+    "embeds": [],
+    "channel": null,
+    "reactions": {
+      "likes_count": 0,
+      "recasts_count": 0,
+      "likes": [],
+      "recasts": []
+    },
+    "replies": {
+      "count": 0
+    },
+    "mentioned_profiles": [
+      {
+        "object": "user",
+        "fid": 970247,
+        "custody_address": "0x59e6a1dc95db3d03bba35c0a4aca2ad598c56ae1",
+        "username": "boardgames",
+        "display_name": "Boardgames",
+        "pfp_url": "https://imagedelivery.net/BXluQx4ige9GuW0Ia56BHw/e3159cfd-a167-42a9-5861-e8ae87602c00/rectcrop3",
+        "profile": {
+          "bio": {
+            "text": null,
+            "mentioned_profiles": []
+          }
+        },
+        "follower_count": 0,
+        "following_count": 3,
+        "verifications": [],
+        "verified_addresses": {
+          "eth_addresses": [],
+          "sol_addresses": []
+        },
+        "power_badge": false
+      }
+    ],
+    "direct_replies": []
+  }
+}

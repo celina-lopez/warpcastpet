@@ -1,0 +1,33 @@
+{
+  "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "name": "string",
+  "link": "www.google.com",
+  "pages": [
+    {
+      "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "version": "vNext",
+      "title": "Welcome to Neynar",
+      "image": {
+        "url": "https://i.imgur.com/qo2AzBf.jpeg",
+        "aspect_ratio": "1.91:1"
+      },
+      "buttons": [
+        {
+          "title": "string",
+          "index": 0,
+          "action_type": "post",
+          "next_page": {
+            "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+          }
+        }
+      ],
+      "input": {
+        "text": {
+          "enabled": false,
+          "placeholder": "string"
+        }
+      }
+    }
+  ],
+  "valid": true
+}

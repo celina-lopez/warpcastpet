@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Castboardgames" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <meta name="fc:frame" content="<%= {
+      version: 'next',
+      imageUrl: "https://playboard.games/images/princess.png",
+      button: {
+        title: "Love Letter",
+        action: {
+          type: 'launch_frame',
+          name: "Secret Scarlett",
+          url: "https://playboard.games",
+          splashImageUrl: "https://playboard.games/images/baron.png",
+          splashBackgroundColor: "#ecf0f1"
+        }
+      }
+    }.to_json %>" />
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,400;0,700;1,400;1,700&family=Averia+Serif+Libre:ital,wght@0,300;0,700;1,300;1,700&family=Caveat&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Spectral:ital,wght@0,300;0,600;1,300;1,600&display=swap&family=Noto+Sans+Symbols+2&display=swap'%>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body data-theme="light" class="bg-gray-100">
+    <main class="container mx-auto my-[20px] px-5 flex">
+      <%= yield %>
+    </main>
+  </body>
+</html>
