@@ -3,20 +3,22 @@ import sdk from "@farcaster/frame-sdk";
 import { createStore } from 'mipd';
 import AddToWarpcastFrame from "./addframe";
 import Transaction from "./transaction";
+import Pet from "./pet";
 
 export default function Frame() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [context, setContext] = useState();
+  const [metadata, setMetadata] = useState();
   const [added, setAdded] = useState(false);
 
   const getVirtualPetData = useCallback(async (contextData) => {
-      // await fetch('/farcaster/players', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({result: {}, context: contextData})
-      // }).then(res => res.json()).then(data => {
-      //   setGameData(data);
-      // });
+      await fetch('/players', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({context: contextData})
+      }).then(res => res.json()).then(data => {
+        setMetadata(data);
+      });
   }, []);
 
   useEffect(() => {
@@ -45,8 +47,9 @@ export default function Frame() {
 
   return (
     <div className='mb-[32px]'>
-    Pet here 
+      {metadata && <Pet metadata={metadata} />}
       {!added && <AddToWarpcastFrame actions={sdk.actions} context={context} added={added} />}
+      {metadata && <ShowContext context={metadata} />}
       <Transaction />
     </div>
 

@@ -4,7 +4,4 @@
 
 # TODOS
 
-- [ ] Game Over (Winner Announcement)
-- [ ] Request for Game Stats
-- [ ] Game Timeout (No Response)
-- [ ] Leaderboard Request
+- [ ] sidekiq to collect once a week

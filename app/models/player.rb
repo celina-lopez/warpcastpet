@@ -16,7 +16,8 @@ class Player < ApplicationRecord
   validates :uid, uniqueness: true
 
   def self.from_context(context)
-    player = Player.find_or_initialize_by(uid: context[:fid])
-    player.update(username: context[:username], avatar_url: context[:pfp_url])
+    player = Player.find_or_initialize_by(uid: context[:user][:fid])
+    player.update(username: context[:user][:username], avatar_url: context[:user][:pfpUrl])
+    player
   end
 end

@@ -31,4 +31,10 @@ class Warpcast::Client < Client
       )
     end
   end
+
+  def get(path)
+    with_json_response(path) do
+      self.class.get(path)
+    end
+  end
 end

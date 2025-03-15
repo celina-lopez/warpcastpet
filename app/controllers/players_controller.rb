@@ -1,22 +1,23 @@
-class PagesController < ApplicationController
+class PlayersController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :allow_iframe_requests
+  before_action :set_player
+
   def create
     player = Player.from_context(params[:context])
-    render json: player
-  end
-
-  def show
-    player = Player.find(params[:id])
-    render json: player
+    render json: player.metadata
   end
 
   def update
-    player = Player.find(params[:id])
-    player.update(player_params)
-    render json: player
+    @player.update(player_params)
+    render json: @player.metadata
   end
 
   private
+
+  def set_player
+    @player = Player.find_by_uid(params[:id])
+  end
 
   def player_params
     params.require(:player).permit(:username, :avatar_url, :metadata)
