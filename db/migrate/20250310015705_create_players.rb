@@ -4,7 +4,9 @@ class CreatePlayers < ActiveRecord::Migration[7.2]
       t.string :username, null: false
       t.string :uid, null: false
       t.string :avatar_url
-      t.jsonb :metadata, null: false, default: {}
+      t.string :score, default: [], array: true
+      t.integer :pet, default: 0
+      t.integer :color, default: 0
       t.timestamps
     end
   end

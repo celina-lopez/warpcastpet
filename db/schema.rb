@@ -18,7 +18,9 @@ ActiveRecord::Schema[7.2].define(version: 2025_03_10_015705) do
     t.string "username", null: false
     t.string "uid", null: false
     t.string "avatar_url"
-    t.jsonb "metadata", default: {}, null: false
+    t.string "score", default: [], array: true
+    t.integer "pet", default: 0
+    t.integer "color", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

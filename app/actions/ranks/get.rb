@@ -15,10 +15,7 @@ module Ranks
       response['result']['history']['winners'].each do |winner|
         if Player.exists?(uid: winner['fid'].to_i)
           player = Player.find_by(uid: winner['fid'].to_i)
-          player.metadata['score'] ||= []
-          player.metadata['score'] << winner['score']
-          player.metadata['rank'] ||= []
-          player.metadata['rank'] << winner['rank']
+          player.score << winner['score']
           player.save!
           context.winners << player
         end

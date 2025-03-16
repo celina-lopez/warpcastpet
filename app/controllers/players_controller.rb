@@ -20,7 +20,7 @@ class PlayersController < ApplicationController
   end
 
   def player_params
-    params.require(:player).permit(:username, :avatar_url, :metadata)
+    params.require(:player).permit(:username, :avatar_url, :color, :pet)
   end
 
   def allow_iframe_requests

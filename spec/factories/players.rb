@@ -4,7 +4,9 @@
 #
 #  id         :bigint           not null, primary key
 #  avatar_url :string
-#  metadata   :jsonb            not null
+#  color      :integer          default(0)
+#  pet        :integer          default(0)
+#  score      :string           default([]), is an Array
 #  uid        :string           not null
 #  username   :string           not null
 #  created_at :datetime         not null

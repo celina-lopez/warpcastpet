@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Customize({metadata, fid, setMetadata}) {
   const [customization, setCustomization] = useState(metadata);
-  const colors = ['blue', 'green', 'red', 'yellow', 'purple', 'orange', 'pink', 'brown', 'gray', 'black', 'white'];
-  const pets = ['hanbunkotchi', 'hanbunkotchi-2', 'hanbunkotchi-3', 'hanbunkotchi-4', 'hanbunkotchi-5', 'hanbunkotchi-6', 'hanbunkotchi-7', 'hanbunkotchi-8', 'hanbunkotchi-9', 'hanbunkotchi-10'];
+  const colors = ['babyblue', 'black', 'blue', 'comic', 'donut', 'flower', 'green', 'love', 'mermaid', 'rainbow', 'sparklegreen', 'sparklepink', 'sparklered', 'white', 'whitepink', 'yellow', ];
+  const pets = ['hanbunkotchi', 'kurupoyotchi', 'kurupoyotchi_pink', 'mokumokutchi', 'ripputchi', 'yumehotchi'];
 
   const handleChange = (e) => {
     setCustomization({...customization, [e.target.name]: e.target.value});
@@ -12,7 +12,7 @@ export default function Customize({metadata, fid, setMetadata}) {
   const handleUpdate = async () => {
     const response = await fetch(`/players/${fid}`, {
       method: 'PUT',
-      body: JSON.stringify({metadata: customization}),
+      body: JSON.stringify({customization}),
     });
     const data = await response.json();
     setCustomization(data);
