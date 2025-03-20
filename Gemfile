@@ -12,7 +12,7 @@ gem 'jbuilder' # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'uglifier', '~> 4.2'
 gem 'light-service'
 gem 'pg', '~> 1.5'
-gem 'tailwindcss-rails', '~> 2.0.30'
+gem 'tailwindcss-rails', '~> 4.2.1'
 gem 'toastr-rails', '~> 1.0'
 gem 'font-awesome-sass'
 gem 'httparty', '~> 0.22.0'
