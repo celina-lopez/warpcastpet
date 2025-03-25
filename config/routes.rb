@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :players, only: [ :create, :update ]
+  resources :webhooks, only: [ :create ]
 end
