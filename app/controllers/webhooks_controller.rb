@@ -4,9 +4,9 @@ class WebhooksController < ApplicationController
   def create
     result = Webhooks::IncomingWebhook.call(params[:data][:author])
     if result.success?
-      render status: :ok
+      render json: { message: 'Webhook received' }, status: :ok
     else
-      render status: :unprocessable_entity
+      render json: { message: 'Webhook failed' }, status: :unprocessable_entity
     end
   end
 end
