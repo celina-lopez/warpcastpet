@@ -22,7 +22,7 @@ module Webhooks
     promises :player, :cast_text
 
     executed do |context|
-      context.cast_text = text(context.player, emotion)
+      context.cast_text = text(context.player)
       Neynar::Cast.new.create(
         text: context.cast_text,
         embeds: pet_image_embed(context.player, emotion)
