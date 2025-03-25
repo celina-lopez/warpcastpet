@@ -17,7 +17,7 @@ class Player < ApplicationRecord
   validates :username, uniqueness: true
   validates :uid, uniqueness: true
 
-  enum color: {
+  enum :color, {
     babyblue: 0,
     black: 1,
     blue: 2,
@@ -36,7 +36,7 @@ class Player < ApplicationRecord
     yellow: 15
   }
 
-  enum pet: {
+  enum :pet, {
     hanbunkotchi: 0,
     kurupoyotchi: 1,
     kurupoyotchi_pink: 2,
