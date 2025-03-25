@@ -4,7 +4,7 @@ module Webhooks
   class Cast
     extend LightService::Action
 
-    expects :
+    expects :author
     promises :player
 
     executed do |context|
