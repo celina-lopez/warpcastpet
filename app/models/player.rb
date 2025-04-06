@@ -4,8 +4,8 @@
 #
 #  id         :bigint           not null, primary key
 #  avatar_url :string
-#  color      :integer          default(0)
-#  pet        :integer          default(0)
+#  color      :integer          default("babyblue")
+#  pet        :integer          default("hanbunkotchi")
 #  score      :string           default([]), is an Array
 #  uid        :string           not null
 #  username   :string           not null

@@ -11,6 +11,7 @@ export default function Pet({metadata}) {
 
   return (
     <div>
+      <div>Your current pet:</div>
       <img src={petImage} alt="pet" />
     </div>
   );

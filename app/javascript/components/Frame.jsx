@@ -47,10 +47,11 @@ export default function Frame() {
 
   return (
     <div className='mb-[32px]'>
-      {metadata && <Pet metadata={metadata} />}
+      <Instructions />
+      {metadata && <Pet {...{...metadata, fid: context}} />}
       {!added && <AddToWarpcastFrame actions={sdk.actions} context={context} added={added} />}
-      {metadata && <ShowContext context={metadata} />}
-      <Transaction />
+      {context && <ShowContext context={context} />}
+      {/* <Transaction /> */}
     </div>
 
   );
@@ -63,6 +64,16 @@ function ShowContext({context}) {
         {JSON.stringify(context, null, 2)}
       </pre>
     </div>
+  )
+}
+
+function Instructions(){
+  return (
+    <p>
+      @rug-pull-baddie to showcase your current virtual pet!
+      <br/>
+      <a href="TODO: add the url">Cast me!</a>
+    </p>
   )
 }
 

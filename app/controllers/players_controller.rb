@@ -5,12 +5,24 @@ class PlayersController < ApplicationController
 
   def create
     player = Player.from_context(params[:context])
-    render json: player.metadata
+    render json: {
+      color: player.color,
+      pet: player.pet,
+      score: player.score,
+      username: player.username,
+      avatar_url: player.avatar_url
+    }
   end
 
   def update
     @player.update(player_params)
-    render json: @player.metadata
+    render json: {
+      color: @player.color,
+      pet: @player.pet,
+      score: @player.score,
+      username: @player.username,
+      avatar_url: @player.avatar_url
+    }
   end
 
   private
