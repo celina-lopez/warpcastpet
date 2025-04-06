@@ -4,7 +4,7 @@ module Ranks
   class Get
     extend LightService::Action
 
-    expects :client
+    expects :client, default: Warpcast::Client.new
     expects :page, default: 1
     expects :winners, default: []
 
