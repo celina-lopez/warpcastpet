@@ -4,6 +4,7 @@ import { createStore } from 'mipd';
 import AddToWarpcastFrame from "./addframe";
 import Transaction from "./transaction";
 import Pet from "./pet";
+import Form from "./form";
 
 export default function Frame() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
@@ -48,7 +49,8 @@ export default function Frame() {
   return (
     <div className='mb-[32px]'>
       <Instructions />
-      {metadata && <Pet {...{...metadata, fid: context}} />}
+      {metadata && <Pet {...{...metadata}} />}
+      {context && <Form {...{metadata, fid: context.user.fid}} />}
       {!added && <AddToWarpcastFrame actions={sdk.actions} context={context} added={added} />}
       {context && <ShowContext context={context} />}
       {/* <Transaction /> */}
