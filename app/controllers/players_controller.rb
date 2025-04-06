@@ -5,12 +5,14 @@ class PlayersController < ApplicationController
 
   def create
     player = Player.from_context(params[:context])
+    emotion = Pet::Emotion.execute(player:).emotion
     render json: {
       color: player.color,
       pet: player.pet,
       score: player.score,
       username: player.username,
-      avatar_url: player.avatar_url
+      avatar_url: player.avatar_url,
+      emotion: emotion
     }
   end
 

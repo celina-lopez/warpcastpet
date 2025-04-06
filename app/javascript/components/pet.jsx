@@ -1,13 +1,12 @@
 import React from "react";
 
-export default function Pet({color, pet, status}) {
-
-  const petImage = `/images/${pet || 'hanbunkotchi'}/${status || 'dancing'}-${color || 'blue'}.gif`;
+export default function Pet({color, pet, emotion}) {
+  const petImage = `/images/${pet}/${emotion}-${color}.gif`;
 
   return (
     <div>
       <div>Your current pet:</div>
-      <img src={petImage} alt="pet" />
+      <img style={{maxHeight: '40vh'}} src={petImage} alt="pet" />
     </div>
   );
 }

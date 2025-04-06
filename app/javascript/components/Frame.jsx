@@ -50,7 +50,7 @@ export default function Frame() {
     <div className='mb-[32px]'>
       <Instructions />
       {metadata && <Pet {...{...metadata}} />}
-      {context && <Form {...{metadata, fid: context.user.fid}} />}
+      {context && metadata && <Form {...{metadata, fid: context.user.fid}} />}
       {!added && <AddToWarpcastFrame actions={sdk.actions} context={context} added={added} />}
       {/* {context && <ShowContext context={context} />} */}
       {/* <Transaction /> */}
@@ -74,7 +74,7 @@ function Instructions(){
     <p>
       @rug-pull-baddie to showcase your current virtual pet!
       <br/>
-      <a href="TODO: add the url">Cast me!</a>
+      <a href="TODO: add the url" className="text-blue-500 underline">Cast me!</a>
     </p>
   )
 }

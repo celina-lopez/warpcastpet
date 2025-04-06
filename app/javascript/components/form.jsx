@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function Form({pet, color, fid}) {
-  const [newPet, setPet] = useState(pet || 'hanbunkotchi');
-  const [newColor, setColor] = useState(color || 'blue');
+export default function Form({pet, color, fid, emotion}) {
+  const [newPet, setPet] = useState(pet);
+  const [newColor, setColor] = useState(color);
   const [open, setOpen] = useState(false);
 
-  const status = "dancing";
-  const petImage = `/images/${pet}/${status}-${color}.gif`;
+  const petImage = `/images/${newPet}/${emotion}-${newColor}.gif`;
 
   const handleSubmit = () => {
     setOpen(false);
@@ -21,16 +20,62 @@ export default function Form({pet, color, fid}) {
 
   return (
     <div>
-      <button onClick={() => setOpen(true)}>Update Virtual Pet</button>
+      <button className="bg-blue-500 text-white px-4 py-2 rounded-md" onClick={() => setOpen(true)}>Update Virtual Pet</button>
       {open && (
         <div>
-          <input type="text" value={newColor} onChange={(e) => setColor(e.target.value)} />
-          <input type="text" value={newPet} onChange={(e) => setPet(e.target.value)} />
-          <button onClick={handleSubmit}>Submit</button>
+          <SelectColor color={newColor} setColor={setColor} />
+          <br/>
+          <SelectPet pet={newPet} setPet={setPet} />
+          <br/>
+          <button className="bg-blue-500 text-white px-4 py-2 rounded-md" onClick={handleSubmit}>Submit</button>
           <div>Preview</div>
           <img src={petImage} height="50" alt="pet" />
         </div>
       )}
     </div>
+  );
+}
+function SelectPet(pet, setPet) {
+  const pets = [
+    'hanbunkotchi',
+    'kurupoyotchi',
+    'kurupoyotchi_pink',
+    'mokumokutchi',
+    'ripputchi',
+    'yumehotchi',
+  ]
+  return (
+    <select value={pet} onChange={(e) => setPet(e.target.value)} className="select select-bordered w-full max-w-xs">
+      {pets.map((pet) => (
+        <option value={pet}>{pet}</option>
+      ))}
+    </select>
+  )
+}
+function SelectColor(color, setColor) {
+  const colors = [
+    'babyblue',
+    'black',
+    'blue',
+    'comic',
+    'donut',
+    'flower',
+    'green',
+    'love',
+    'mermaid',
+    'rainbow',
+    'sparklegreen',
+    'sparklepink',
+    'sparklered',
+    'white',
+    'whitepink',
+    'yellow',
+  ]
+  return (
+    <select value={color} onChange={(e) => setColor(e.target.value)} className="select select-bordered w-full max-w-xs">
+      {colors.map((color) => (
+        <option value={color}>{color}</option>
+      ))}
+    </select>
   );
 }
