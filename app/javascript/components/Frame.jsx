@@ -52,7 +52,7 @@ export default function Frame() {
       {metadata && <Pet {...{...metadata}} />}
       {context && <Form {...{metadata, fid: context.user.fid}} />}
       {!added && <AddToWarpcastFrame actions={sdk.actions} context={context} added={added} />}
-      {context && <ShowContext context={context} />}
+      {/* {context && <ShowContext context={context} />} */}
       {/* <Transaction /> */}
     </div>
 
