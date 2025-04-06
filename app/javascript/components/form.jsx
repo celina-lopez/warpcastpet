@@ -35,7 +35,7 @@ export default function Form({pet, color, fid, emotion}) {
     </div>
   );
 }
-function SelectPet(pet, setPet) {
+function SelectPet({pet, setPet}) {
   const pets = [
     'hanbunkotchi',
     'kurupoyotchi',
@@ -46,13 +46,13 @@ function SelectPet(pet, setPet) {
   ]
   return (
     <select value={pet} onChange={(e) => setPet(e.target.value)} className="select select-bordered w-full max-w-xs">
-      {pets.map((pet) => (
-        <option value={pet}>{pet}</option>
+      {pets.map((p) => (
+        <option value={p} >{p}</option>
       ))}
     </select>
   )
 }
-function SelectColor(color, setColor) {
+function SelectColor({color, setColor}) {
   const colors = [
     'babyblue',
     'black',
@@ -73,8 +73,8 @@ function SelectColor(color, setColor) {
   ]
   return (
     <select value={color} onChange={(e) => setColor(e.target.value)} className="select select-bordered w-full max-w-xs">
-      {colors.map((color) => (
-        <option value={color}>{color}</option>
+      {colors.map((c) => (
+        <option value={c}>{c}</option>
       ))}
     </select>
   );
