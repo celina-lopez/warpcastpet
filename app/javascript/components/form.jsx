@@ -1,33 +1,38 @@
 import React, { useState } from "react";
 import Pet from "./pet";
-export default function Form({pet, color, fid, emotion}) {
-  const [newPet, setPet] = useState(pet);
-  const [newColor, setColor] = useState(color);
+export default function Form({pet, color, setPet, setColor, fid, emotion, setMetadata}) {
   const [open, setOpen] = useState(false);
-// TODO: have it update
+
   const handleSubmit = () => {
     setOpen(false);
     fetch(`/players/${fid}`, {
       method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body: JSON.stringify({
-        pet: newPet,
-        color: newColor,
+        player: {
+          pet,
+          color,
+        },
       }),
+    }).then(res => res.json()).then(data => {
+      setMetadata((old) => ({...old, ...data}));
     });
   }
 
   return (
     <div className="justify-self-center">
-      <button className="bg-blue-500 text-white w-full px-4 py-2 my-2 rounded-md" onClick={() => setOpen(true)}>Update Virtual Pet</button>
+      <button className="bg-[#7c65c1] text-white w-full px-4 py-2 my-2 rounded-md" onClick={() => setOpen(true)}>Update Virtual Pet</button>
       {open && (
         <div>
-          <SelectColor color={newColor} setColor={setColor} />
+          <SelectColor color={color} setColor={setColor} />
           <br/>
-          <SelectPet pet={newPet} setPet={setPet} />
+          <SelectPet pet={pet} setPet={setPet} />
           <br/>
-          <button className="bg-blue-500 text-white w-full px-4 py-2 rounded-md" onClick={handleSubmit}>Update</button>
+          <button className="bg-[#7c65c1]  text-white w-full px-4 py-2 rounded-md" onClick={handleSubmit}>Update</button>
           <div className="text-align-center text-sm my-2">Preview</div>
-          <Pet pet={newPet} color={newColor} emotion={emotion} />
+          <Pet pet={pet} color={color} emotion={emotion} />
         </div>
       )}
     </div>
@@ -43,7 +48,7 @@ function SelectPet({pet, setPet}) {
     'yumehotchi',
   ]
   return (
-    <select value={pet} onChange={(e) => setPet(e.target.value)} className="select select-bordered w-full max-w-xs rounded-md my-2">
+    <select value={pet} onChange={(e) => setPet(e.target.value)} className="text-black select select-bordered w-full max-w-xs rounded-md my-2">
       {pets.map((p) => (
         <option value={p} >{p}</option>
       ))}
@@ -70,7 +75,7 @@ function SelectColor({color, setColor}) {
     'yellow',
   ]
   return (
-    <select value={color} onChange={(e) => setColor(e.target.value)} className="select select-bordered w-full max-w-xs rounded-md my-2">
+    <select value={color} onChange={(e) => setColor(e.target.value)} className="text-black select select-bordered w-full max-w-xs rounded-md my-2">
       {colors.map((c) => (
         <option value={c}>{c}</option>
       ))}

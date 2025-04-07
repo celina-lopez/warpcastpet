@@ -10,6 +10,8 @@ export default function Frame() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [context, setContext] = useState();
   const [metadata, setMetadata] = useState();
+  const [pet, setPet] = useState();
+  const [color, setColor] = useState();
   const [added, setAdded] = useState(false);
 
   const getVirtualPetData = useCallback(async (contextData) => {
@@ -19,6 +21,8 @@ export default function Frame() {
         body: JSON.stringify({context: contextData})
       }).then(res => res.json()).then(data => {
         setMetadata(data);
+        setPet(data.pet);
+        setColor(data.color);
       });
   }, []);
 
@@ -50,7 +54,7 @@ export default function Frame() {
     <div className='mb-[32px]'>
       <Instructions />
       {metadata && <Pet {...{...metadata}} />}
-      {context && metadata && <Form {...{...metadata, fid: context.user.fid}} />}
+      {context && metadata && <Form {...{fid: context.user.fid, emotion: metadata.emotion, setMetadata, pet, color, setPet, setColor}} />}
       {!added && <AddToWarpcastFrame actions={sdk.actions} context={context} added={added} />}
       {/* {context && <ShowContext context={context} />} */}
       {/* <Transaction /> */}

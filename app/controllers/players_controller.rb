@@ -20,10 +20,7 @@ class PlayersController < ApplicationController
     @player.update(player_params)
     render json: {
       color: @player.color,
-      pet: @player.pet,
-      score: @player.score,
-      username: @player.username,
-      avatar_url: @player.avatar_url
+      pet: @player.pet
     }
   end
 
