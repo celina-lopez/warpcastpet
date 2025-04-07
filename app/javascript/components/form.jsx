@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-
+import Pet from "./pet";
 export default function Form({pet, color, fid, emotion}) {
   const [newPet, setPet] = useState(pet);
   const [newColor, setColor] = useState(color);
   const [open, setOpen] = useState(false);
-
-  const petImage = `/images/${newPet}/${emotion}-${newColor}.gif`;
-
+// TODO: have it update
   const handleSubmit = () => {
     setOpen(false);
     fetch(`/players/${fid}`, {
@@ -19,17 +17,17 @@ export default function Form({pet, color, fid, emotion}) {
   }
 
   return (
-    <div>
-      <button className="bg-blue-500 text-white px-4 py-2 rounded-md" onClick={() => setOpen(true)}>Update Virtual Pet</button>
+    <div className="justify-self-center">
+      <button className="bg-blue-500 text-white w-full px-4 py-2 my-2 rounded-md" onClick={() => setOpen(true)}>Update Virtual Pet</button>
       {open && (
         <div>
           <SelectColor color={newColor} setColor={setColor} />
           <br/>
           <SelectPet pet={newPet} setPet={setPet} />
           <br/>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md" onClick={handleSubmit}>Submit</button>
-          <div>Preview</div>
-          <img src={petImage} height="50" alt="pet" />
+          <button className="bg-blue-500 text-white w-full px-4 py-2 rounded-md" onClick={handleSubmit}>Update</button>
+          <div className="text-align-center text-sm my-2">Preview</div>
+          <Pet pet={newPet} color={newColor} emotion={emotion} />
         </div>
       )}
     </div>
@@ -45,7 +43,7 @@ function SelectPet({pet, setPet}) {
     'yumehotchi',
   ]
   return (
-    <select value={pet} onChange={(e) => setPet(e.target.value)} className="select select-bordered w-full max-w-xs">
+    <select value={pet} onChange={(e) => setPet(e.target.value)} className="select select-bordered w-full max-w-xs rounded-md my-2">
       {pets.map((p) => (
         <option value={p} >{p}</option>
       ))}
@@ -72,7 +70,7 @@ function SelectColor({color, setColor}) {
     'yellow',
   ]
   return (
-    <select value={color} onChange={(e) => setColor(e.target.value)} className="select select-bordered w-full max-w-xs">
+    <select value={color} onChange={(e) => setColor(e.target.value)} className="select select-bordered w-full max-w-xs rounded-md my-2">
       {colors.map((c) => (
         <option value={c}>{c}</option>
       ))}
