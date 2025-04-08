@@ -9,11 +9,11 @@ class FarcasterController < ApplicationController
   "frame": {
     "version": '1',
     "name": 'WarpcastPet',
-    "iconUrl": 'https://pet.playboard.games/images/mokumokutchi/freak-blue.gif',
+    "iconUrl": 'https://pet.playboard.games/images/mokumokutchi/dancing-sparklepink.gif',
     "homeUrl": 'https://pet.playboard.games',
-    "imageUrl": 'https://pet.playboard.games/images/mokumokutchi/freak-blue.gif',
+    "imageUrl": 'https://pet.playboard.games/images/mokumokutchi/dancing-sparklepink.gif',
     "buttonTitle": 'Get your Pet!',
-    "splashImageUrl": 'https://pet.playboard.games/images/mokumokutchi/freak-blue.gif',
+    "splashImageUrl": 'https://pet.playboard.games/images/mokumokutchi/dancing-sparklepink.gif',
     "splashBackgroundColor": '#eeccff',
     "webhookUrl": 'https://pet.playboard.games/webhooks'
   }
