@@ -3,8 +3,8 @@ class FarcasterController < ApplicationController
     example = {
   "accountAssociation": {
     "header": 'eyJmaWQiOjk2MTEyMywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweEE0ZjA1M2Y4MzJkZjY0ZTdDMGZhZjZjMEY5NDA5REVBNUYzODNkQ2YifQ',
-    "payload": 'eyJkb21haW4iOiJ3YXJwY2FzdC5wbGF5Ym9hcmQuZ2FtZXMifQ',
-    "signature": 'MHgyOTY5ZTYxODc0OWRmMTlhZjdmYjdhNTEyYmZhODc3YTY0NTEyMDkzMGVmMDAxNmY2NzVhODdjYTFmMTQ0MmI3Mzk0NTc4NzhmOWM5YjNjYTE3NzZiYTliMjY5NDI4M2MyOWRlNzdmODI3NGZmMGQwODMyYWEyOTU2MTIyZDhhNjFj'
+    "payload": 'eyJkb21haW4iOiJwZXQucGxheWJvYXJkLmdhbWVzIn0',
+    "signature": 'MHg2ZDIxM2U1NDBiM2E4MjFlZGZlNjNlYTQxY2MzNDZmOTZiMjQ0YmM1ZTZlYzRjMTM0NGM4ODZlZGMwYjc1ZGU4NTBkYWVmNWZiYTVlOTY5MjVkNzRiMzViMDRkNjhmOGM3ZmYwNjM2ZTZiYjdhNjk5ZGE4MjExZjdlNjA0ZTI1NTFi'
   },
   "frame": {
     "version": '1',
