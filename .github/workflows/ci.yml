@@ -46,7 +46,7 @@ jobs:
       JWT_ALGORITHM: HS256
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Install libmagick++-dev
         run: sudo apt-get install -y libmagick++-dev
